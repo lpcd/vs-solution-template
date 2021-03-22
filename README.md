@@ -1,2 +1,3 @@
-# vs-solution-template
-Create Oignon API solution template for visual studio
+# Info
+
+Article disponible sur [https://www.softfluent.fr/](https://www.softfluent.fr/)
