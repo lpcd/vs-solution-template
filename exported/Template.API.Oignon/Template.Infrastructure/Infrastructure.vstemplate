@@ -1,0 +1,40 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>$safeprojectname$</Name>
+    <Description>&lt;Aucune description disponible&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>$safeprojectname$</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="$safeprojectname$.csproj" ReplaceParameters="true">
+      <Folder Name="EntitiesConfigurations" TargetFolderName="EntitiesConfigurations">
+        <ProjectItem ReplaceParameters="true" TargetFileName="TodoEntityConfiguration.cs">TodoEntityConfiguration.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ServiceCollectionExtension.cs">ServiceCollectionExtension.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Migrations" TargetFolderName="Migrations">
+        <ProjectItem ReplaceParameters="true" TargetFileName="20210318155011_initial-create.cs">20210318155011_initial-create.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="20210318155011_initial-create.Designer.cs">20210318155011_initial-create.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MyDbContextModelSnapshot.cs">MyDbContextModelSnapshot.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Persistance" TargetFolderName="Persistance">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DatabaseSettings.cs">DatabaseSettings.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IMyDbContext.cs">IMyDbContext.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MyDbContext.cs">MyDbContext.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Repositories" TargetFolderName="Repositories">
+        <ProjectItem ReplaceParameters="true" TargetFileName="TodoRepository.cs">TodoRepository.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Softfluent.Template.API</name>
+    </assembly>
+    <members>
+        <member name="T:Softfluent.Template.API.Configurations.ApiConfiguration">
+            <summary>
+            Root configuration of the API projet
+            </summary>
+        </member>
+        <member name="P:Softfluent.Template.API.Configurations.ApiConfiguration.EnableSwagger">
+            <summary>
+            Gets or sets if swagger is enable or not
+            </summary>
+        </member>
+        <member name="T:Softfluent.Template.API.Controllers.TodoController">
+            <summary>
+            "Todo" endpoints.
+            </summary>
+        </member>
+        <member name="M:Softfluent.Template.API.Controllers.TodoController.#ctor(Microsoft.Extensions.Logging.ILogger{Softfluent.Template.API.Controllers.TodoController},Softfluent.Template.Core.Interfaces.IServices.ITodoService)">
+            <summary>
+            Create new <see cref="T:Softfluent.Template.API.Controllers.TodoController"/> instance.
+            </summary>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/></param>
+            <param name="service"><see cref="T:Softfluent.Template.Core.Interfaces.IServices.ITodoService"/></param>
+        </member>
+        <member name="M:Softfluent.Template.API.Controllers.TodoController.GetAllAsync">
+            <summary>
+            Gets the list of all "Todo".
+            </summary>
+            <response code="200">Returns a collection of all "Todo".</response>
+            <response code="500">Fail to get collection of "Todo".</response>
+            <returns>Collection of "Todo".</returns>
+        </member>
+        <member name="M:Softfluent.Template.API.Controllers.TodoController.GetByIdAsync(System.Int64)">
+            <summary>
+            Gets a "Todo" by it's ID.
+            </summary>
+            <param name="id">Identifier.</param>
+            <response code="200">Returns "Todo".</response>
+            <response code="404">"Todo" not found.</response>
+            <response code="500">Fail to get "Todo".</response>
+            <returns>"Todo".</returns>
+        </member>
+        <member name="M:Softfluent.Template.API.Controllers.TodoController.AddAsync(Softfluent.Template.Core.Dtos.Todo.NewTodoDto)">
+            <summary>
+            Create new "Todo".
+            </summary>
+            <param name="model">Informations.</param>
+            <response code="200">Returns created "Todo".</response>
+            <response code="500">Fail to create "Todo".</response>
+            <returns>Created "Todo".</returns>
+        </member>
+        <member name="M:Softfluent.Template.API.Controllers.TodoController.UpdateAsync(System.Int64,Softfluent.Template.Core.Dtos.Todo.UpdateTodoDto)">
+            <summary>
+            Update "Todo" by it's ID.
+            </summary>
+            <param name="id">Identifier.</param>
+            <param name="model">Informations.</param>
+            <response code="200">Returns updated "Todo".</response>
+            <response code="404">"Todo" not found.</response>
+            <response code="500">Fail to update "Todo".</response>
+            <returns>Updated "Todo".</returns>
+        </member>
+        <member name="M:Softfluent.Template.API.Controllers.TodoController.RemoveAsync(System.Int64)">
+            <summary>
+            Remove "Todo" by it's ID.
+            </summary>
+            <param name="id">"Todo" identifier.</param>
+            <response code="200">Returns removed "Todo".</response>
+            <response code="404">"Todo" not found.</response>
+            <response code="500">Fail to remove "Todo".</response>
+            <returns>Removed "Todo".</returns>
+        </member>
+        <member name="T:Softfluent.Template.API.Extensions.AppBuilderExtensions">
+            <summary>
+            Adds extensions to the <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>
+            </summary>
+        </member>
+        <member name="M:Softfluent.Template.API.Extensions.AppBuilderExtensions.ConfigureSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configure Swagger UI.
+            </summary>
+            <param name="app">Application builder</param>
+        </member>
+        <member name="T:Softfluent.Template.API.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Defines extensions for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Softfluent.Template.API.Extensions.ServiceCollectionExtensions.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add swagger doc generation to the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance.
+            </summary>
+            <param name="services">Service collection</param>
+        </member>
+        <member name="M:Softfluent.Template.API.Extensions.ServiceCollectionExtensions.AddAutoMapper(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds and load auto mapper profiles.
+            </summary>
+            <param name="services">Service collection</param>
+        </member>
+        <member name="T:Softfluent.Template.API.Program">
+            <summary>
+            Main application entry point.
+            </summary>
+        </member>
+        <member name="M:Softfluent.Template.API.Program.Main(System.String[])">
+            <summary>
+            Web API entry point.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Softfluent.Template.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates and builds a web host.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Softfluent.Template.API.Startup">
+            <summary>
+            Configure all requirement for API.
+            </summary>
+        </member>
+        <member name="P:Softfluent.Template.API.Startup.Configuration">
+            <summary>
+            Gets the API configuration.
+            </summary>
+        </member>
+        <member name="P:Softfluent.Template.API.Startup.ApiConfiguration">
+            <summary>
+            Gets or sets api configuration
+            </summary>
+        </member>
+        <member name="M:Softfluent.Template.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates the API bootstraper instance.
+            </summary>
+            <param name="configuration">API configuration.</param>
+        </member>
+        <member name="M:Softfluent.Template.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the API services.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Softfluent.Template.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Softfluent.Template.Infrastructure.Persistance.MyDbContext)">
+            <summary>
+            Configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Application builder</param>
+            <param name="env">Web host environment</param>
+            <param name="dbContext">DbContext for lunch migration when API start</param>
+        </member>
+        <member name="T:Softfluent.Template.API.Swagger.HealthChecksFilter">
+            <summary>
+            Filter for create route in API for check if is alive.
+            </summary>
+        </member>
+        <member name="M:Softfluent.Template.API.Swagger.HealthChecksFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Include heath check.
+            </summary>
+            <param name="swaggerDoc"><see cref="T:Microsoft.OpenApi.Models.OpenApiDocument"/></param>
+            <param name="context"><see cref="T:Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext"/></param>
+        </member>
+    </members>
+</doc>

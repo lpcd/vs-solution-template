@@ -1,0 +1,51 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>$safeprojectname$</Name>
+    <Description>&lt;Aucune description disponible&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>$safeprojectname$</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="$safeprojectname$.csproj" ReplaceParameters="true">
+      <Folder Name="BusinessServices" TargetFolderName="BusinessServices">
+        <ProjectItem ReplaceParameters="true" TargetFileName="TodoService.cs">TodoService.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Dtos" TargetFolderName="Dtos">
+        <Folder Name="Todo" TargetFolderName="Todo">
+          <ProjectItem ReplaceParameters="true" TargetFileName="NewTodoDto.cs">NewTodoDto.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TodoDto.cs">TodoDto.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="UpdateTodoDto.cs">UpdateTodoDto.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Entities" TargetFolderName="Entities">
+        <ProjectItem ReplaceParameters="true" TargetFileName="IBaseEntity.cs">IBaseEntity.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IInfoEntity.cs">IInfoEntity.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TodoEntity.cs">TodoEntity.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="InjectableAttribute.cs">InjectableAttribute.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ServiceCollectionExtensions.cs">ServiceCollectionExtensions.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Interfaces" TargetFolderName="Interfaces">
+        <Folder Name="IRepositories" TargetFolderName="IRepositories">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ITodoRepository.cs">ITodoRepository.cs</ProjectItem>
+        </Folder>
+        <Folder Name="IServices" TargetFolderName="IServices">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ITodoService.cs">ITodoService.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Mappers" TargetFolderName="Mappers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="TodoProfile.cs">TodoProfile.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
